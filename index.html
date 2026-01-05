@@ -5,19 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foreigner Civil Service Chatbot - 한국 민원 행정 지원 챗봇</title>
-    <meta name="description"
-        content="Navigate Korean Government Services with Ease! Your AI Partner for Living in Korea.">
+    <meta name="description" content="Navigate Korean Government Services with Ease! Your AI Partner for Living in Korea.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-bg-overlay"></div>
         <div class="hero-content fade-in-up">
@@ -25,11 +21,9 @@
             <p class="subtitle">Your AI Partner for Living in Korea.</p>
             <p class="description">한국 생활의 든든한 파트너, 외국인 전용 민원 챗봇이 여러분을 도와드립니다.</p>
             <a href="javascript:void(0)" onclick="openChatbot();" class="cta-button primary">Start Chatbot Now (챗봇 시작하기)</a>
-                class="cta-button primary" target="_blank">Start Chatbot Now (챗봇 시작하기)</a>
         </div>
     </header>
 
-    <!-- Problem Section -->
     <section class="problem section-padding" id="problem">
         <div class="container">
             <div class="row">
@@ -68,7 +62,6 @@
         </div>
     </section>
 
-    <!-- Solution Section -->
     <section class="solution section-padding bg-light" id="solution">
         <div class="container text-center">
             <div class="section-header fade-in-up">
@@ -95,16 +88,13 @@
         </div>
     </section>
 
-    <!-- Smart Life (Sub Section) -->
-    <section class="smart-life section-padding dark-overlay"
-        style="background-image: url('assets/images/seoul_night.jpg');">
+    <section class="smart-life section-padding dark-overlay" style="background-image: url('assets/images/seoul_night.jpg');">
         <div class="container text-center text-white">
             <h2 class="fade-in-up">Smart Life in Korea</h2>
             <p class="fade-in-up">Focus on enjoying your life, leave the paperwork to us.</p>
         </div>
     </section>
 
-    <!-- How to Use -->
     <section class="how-to section-padding" id="how-to">
         <div class="container">
             <h2 class="text-center mb-5">How to Use (사용 방법)</h2>
@@ -128,20 +118,16 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section section-padding bg-primary text-white text-center" id="chatbot">
         <div class="container">
             <h2 class="mb-4">Ready to simplify your life in Korea?</h2>
             <div class="cta-box">
-                <a href="javascript:void(0)" onclick="openChatbot();"
-   class="cta-button white pulse-anim">🤖 Start Chatbot (챗봇 시작하기)</a>
-                    class="cta-button white pulse-anim" target="_blank">🤖 Start Chatbot (챗봇 시작하기)</a>
+                <a href="javascript:void(0)" onclick="openChatbot();" class="cta-button white pulse-anim">🤖 Start Chatbot (챗봇 시작하기)</a>
                 <p class="mt-3 small-text">* Link will direct you to the NotebookLM interface.</p>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
     <section class="gallery section-padding">
         <div class="container-fluid p-0">
             <div class="gallery-grid">
@@ -165,7 +151,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -182,19 +167,14 @@
             </div>
         </div>
     </footer>
-</body>
 
-
-<script>
-        // 상단, 하단 어떤 버튼을 눌러도 이 함수가 실행됩니다.
+    <script>
         function openChatbot() {
             const difyButton = document.getElementById('dify-chatbot-bubble-button');
-            
             if (difyButton) {
-                difyButton.click(); // 챗봇 창 열기
+                difyButton.click(); 
             } else {
                 console.log("챗봇 로딩 중...");
-                // 0.5초 대기 후 재시도 로직 (사용자가 너무 빨리 눌렀을 때 대비)
                 setTimeout(() => {
                     const retryBtn = document.getElementById('dify-chatbot-bubble-button');
                     if (retryBtn) retryBtn.click();
@@ -203,28 +183,31 @@
             }
         }
 
-        // 새로운 챗봇 설정 정보
         window.difyChatbotConfig = {
             token: 'zChnFzFZzDExq0rP'
         };
     </script>
 
-    <script 
-        src="https://udify.app/embed.min.js" 
-        id="zChnFzFZzDExq0rP" 
-        defer>
-    </script>
+    <script src="https://udify.app/embed.min.js" id="zChnFzFZzDExq0rP" defer></script>
 
     <style>
+        /* 챗봇 버튼 디자인 및 고정 위치 설정 */
         #dify-chatbot-bubble-button {
-            background-color: #1C64F2 !important; /* 버튼 색상 */
+            background-color: #1C64F2 !important;
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            z-index: 9999 !important;
         }
+        /* 챗봇 윈도우 하단 고정 (스크롤 방지) */
         #dify-chatbot-bubble-window {
-            width: 24rem !important; /* 창 너비 */
-            height: 40rem !important; /* 창 높이 */
+            position: fixed !important;
+            bottom: 85px !important;
+            right: 20px !important;
+            width: 24rem !important;
+            height: 40rem !important;
+            z-index: 9999 !important;
         }
     </style>
 </body>
 </html>
-
-
