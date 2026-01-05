@@ -184,4 +184,45 @@
 </body>
 
 
+<script>
+        // 상단, 하단 어떤 버튼을 눌러도 이 함수가 실행됩니다.
+        function openChatbot() {
+            const difyButton = document.getElementById('dify-chatbot-bubble-button');
+            
+            if (difyButton) {
+                difyButton.click(); // 챗봇 창 열기
+            } else {
+                console.log("챗봇 로딩 중...");
+                // 0.5초 대기 후 재시도 로직 (사용자가 너무 빨리 눌렀을 때 대비)
+                setTimeout(() => {
+                    const retryBtn = document.getElementById('dify-chatbot-bubble-button');
+                    if (retryBtn) retryBtn.click();
+                    else alert("챗봇이 준비 중입니다. 잠시만 기다려주세요!");
+                }, 500);
+            }
+        }
+
+        // 새로운 챗봇 설정 정보
+        window.difyChatbotConfig = {
+            token: 'zChnFzFZzDExq0rP'
+        };
+    </script>
+
+    <script 
+        src="https://udify.app/embed.min.js" 
+        id="zChnFzFZzDExq0rP" 
+        defer>
+    </script>
+
+    <style>
+        #dify-chatbot-bubble-button {
+            background-color: #1C64F2 !important; /* 버튼 색상 */
+        }
+        #dify-chatbot-bubble-window {
+            width: 24rem !important; /* 창 너비 */
+            height: 40rem !important; /* 창 높이 */
+        }
+    </style>
+</body>
 </html>
+
